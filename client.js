@@ -1,13 +1,13 @@
 var udp = require('dgram');
-
+require('dotenv').config()
 var serverAddr = {
-    address: '192.168.1.115',
-    port: '2222'
+    address: process.env.SERVER_ADDR,
+    port: process.env.SERVER_PORT
 }
 
 var clientAddr = {
-    address: '192.168.1.115',
-    port: '55555'
+    address: process.env.CLIENT_ADDR,
+    port: process.env.CLIENT_PORT
 }
 // creating a client socket
 var client = udp.createSocket('udp4');
